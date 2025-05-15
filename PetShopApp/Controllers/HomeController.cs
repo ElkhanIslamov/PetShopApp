@@ -16,12 +16,10 @@ public class HomeController : Controller
         _context = context;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        var products = _context.FoodProducts
-            .Include(fc=>fc.FoodCategoryId)
-            .ToList();
-        var categories = _context.FoodCategories.ToList();
+        var products =await _context.FoodProducts.ToListAsync();
+        var categories =await _context.FoodCategories.ToListAsync();
         var model = new HomeViewModel
         {
             FoodCategories = categories,

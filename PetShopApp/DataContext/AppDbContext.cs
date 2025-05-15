@@ -10,6 +10,8 @@ namespace PetShopApp.DataContext
         }
         public DbSet<FoodCategory> FoodCategories { get; set; } = null!;
         public DbSet<FoodProduct> FoodProducts { get; set; } = null!;
+        public DbSet<Product> Products { get; set; } = null!;
+        public DbSet<CartItem> CartItems { get; set; } = null!;
 
 
     }
